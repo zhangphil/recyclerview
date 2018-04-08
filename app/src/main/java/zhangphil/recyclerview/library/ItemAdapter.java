@@ -29,6 +29,14 @@ public abstract class ItemAdapter extends RecyclerView.Adapter<ItemVH> {
 
     public void addItem(Item item) {
         mItems.add(item);
+
+        if (item.isExpand) {
+            for (int i = 0; i < item.getSubItems().size(); i++) {
+                mItems.add(item.getSubItems().get(i));
+            }
+        } else {
+
+        }
     }
 
     public void addAll(ArrayList<Item> lists) {

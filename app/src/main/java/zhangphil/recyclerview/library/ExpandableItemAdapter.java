@@ -72,24 +72,6 @@ public abstract class ExpandableItemAdapter extends ItemAdapter {
         }
     }
 
-    /**
-     * 添加一个Item，该Item可以是一个普通的Item，也可以是一个包含子Item的item。
-     *
-     * @param item
-     */
-    @Override
-    public void addItem(Item item) {
-        super.addItem(item);
-
-        if (item.isExpand) {
-            for (int i = 0; i < item.getSubItems().size(); i++) {
-                super.addItem(item.getSubItems().get(i));
-            }
-        } else {
-
-        }
-    }
-
     public interface ExpandableToggleListener {
         public void onExpand(Item item);
 
